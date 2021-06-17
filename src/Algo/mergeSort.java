@@ -23,6 +23,36 @@ public class mergeSort {
     }
 
     public static void merge(int[] arr, int l, int m, int r){
-        
+        int fir=m-l+1;  //size of first arr[l,m]
+        int sec=r-m;    //size of second arr[m+1,r]
+
+        int left[] =new int[fir];
+        int right[] =new int[sec];
+
+        for(int i=0;i<fir;i++)  left[i]=arr[l+i];
+        for(int i=0;i<sec;i++)  right[i]=arr[m+i+1];
+
+        int k=l,i=0,j=0;
+        while(i<fir && j<sec){
+            if(left[i]<=right[j]){
+                arr[k]=left[i];
+                i++;
+            }
+            else{
+                arr[k]=right[j];
+                j++;
+            }
+            k++;
+        }
+
+        while(i<fir){
+            arr[k]=left[i];
+            i++; k++;
+        }
+        while(j<sec){
+            arr[k]=right[j];
+            j++; k++;
+        }
+
     }
 }
