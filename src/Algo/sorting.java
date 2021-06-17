@@ -15,7 +15,7 @@ public class sorting {
         for(int i=0;i<len-1;i++){
             int val=i;
             for(int j=i+1;j<len;j++){
-                if(arr[i]>arr[j])
+                if(arr[val]>arr[j])
                     val=j;
             }
             int tem=arr[i];
