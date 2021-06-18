@@ -14,7 +14,7 @@ public class interpolationSearch {
 
     int key = in.nextInt();   //which needs to be searched
 
-    int val = interpol(arr, 0, n, key);
+    int val = interpol(arr, 0, n-1, key);
         System.out.println(val);
     }
 
