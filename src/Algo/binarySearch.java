@@ -5,18 +5,19 @@ public class binarySearch {
     public static void main(String ar[]){
         Scanner in=new Scanner(System.in);
         int n=in.nextInt();     //array length
-        int key=in.nextInt();   //which needs to be searched
+
         int[] arr=new int[n];
 
         for(int i=0;i<n;i++)  arr[i]=in.nextInt();   //sorted array
 
+        int key=in.nextInt();   //which needs to be searched
 
         int val=binsrc(arr,0,n,key);
         System.out.println(val);
     }
 
     public static int binsrc(int[] arr,int r,int l,int k){
-        if(r<=l){
+        if(l>=r){
             int mid=(r+l)/2;
             if(arr[mid]==k)
                 return mid+1;
