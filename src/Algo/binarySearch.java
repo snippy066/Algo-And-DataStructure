@@ -12,7 +12,7 @@ public class binarySearch {
 
         int key=in.nextInt();   //which needs to be searched
 
-        int val=binsrc(arr,0,n,key);
+        int val=binsrc(arr,0,n-1,key);
         System.out.println(val);
     }
 
