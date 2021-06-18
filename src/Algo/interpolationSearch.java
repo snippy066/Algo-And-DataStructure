@@ -21,7 +21,7 @@ public class interpolationSearch {
     public static int interpol(int arr[],int lo,int hi,int k){
         int pos=-1;
         if(lo<=hi && arr[lo]<=k && arr[hi]>=k){
-            pos=lo+(((hi-lo)/(arr[hi]-arr[lo]))*(k-arr[lo]));
+            pos=lo+((hi-lo)/(arr[hi]-arr[lo]))*(k-arr[lo]);
 
             if(arr[pos]==k)
                 return pos+1;
