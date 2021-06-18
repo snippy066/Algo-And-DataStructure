@@ -10,9 +10,7 @@ public class interpolationSearch {
 
     int[] arr = new int[n];
 
-    for(
-    int i = 0;
-    i<n;i++)arr[i]=in.nextInt();   //sorted array
+    for(int i = 0;i<n;i++) arr[i]=in.nextInt();   //sorted array
 
     int key = in.nextInt();   //which needs to be searched
 
