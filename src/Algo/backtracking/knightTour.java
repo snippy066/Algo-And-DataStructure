@@ -24,12 +24,21 @@ public class knightTour {
 
         sol[0][0]=0;
 
-        if(!solext(0,0,1,sol,n,xmove,ymove));   //(0,0) starting co-ordinate and 1 for move refrence
+        if(!solext(0,0,1,sol,n,xmove,ymove))   //(0,0) starting co-ordinate and 1 for move refrence
             System.out.println("sol doesn't exists");
-
         else
-            solprint(sol);
+            solprint(sol,n);
     }
 
+    static boolean solext(int x,int y,int move,int[][] sol,int siz,int[] xmo,int[] ymov){
+        return false;
+    }
     
+    static void solprint(int[][] arr,int n){
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++)
+                System.out.print(arr[i][j]);
+            System.out.println();
+        }
+    }
 }
