@@ -42,7 +42,10 @@ public class knightTour {
             if((nex_xmov>=0 && nex_xmov<siz && nex_ymov>=0
                     && nex_ymov<siz && sol[nex_xmov][nex_ymov]==-1 )){
                 sol[nex_xmov][nex_ymov]=move;
-                if(solext(nex_xmov,nex_ymov,move+1,sol,xmo,ymov));
+                if(solext(nex_xmov,nex_ymov,move+1,sol,xmo,ymov))
+                    return true;
+                else
+                    sol[nex_xmov][nex_ymov]=-1;
             }
         }
         return false;
