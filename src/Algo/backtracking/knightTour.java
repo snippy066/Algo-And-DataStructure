@@ -1,5 +1,4 @@
 package Algo.backtracking;
-import javax.swing.*;
 import java.util.*;
 
 public class knightTour {
@@ -8,11 +7,12 @@ public class knightTour {
     public static void main(String ar[]){
         Scanner in=new Scanner(System.in);
         int n=in.nextInt();
-        solvKt(n);
         siz=n;
+        solvKt(n);
+
     }
 
-    public static void solvKt(int n){
+    public static boolean solvKt(int n){
         sol=new int[n][n];
 
         for(int i=0;i<n;i++){
@@ -20,29 +20,33 @@ public class knightTour {
                 sol[i][j]=-1;
         }
 
-        int[] xmove={2,2,-2,-2,1,1,-1,-1};
-        int[] ymove={1,-1,1,-1,2,-2,2,-2};
+        int[] xmove={ 2, 1, -1, -2, -2, -1, 1, 2 };
+        int[] ymove={ 1, 2, 2, 1, -1, -2, -2, -1 };
 
         sol[0][0]=0;
 
-        if(!solext(0,0,1,sol,xmove,ymove))   //(0,0) starting co-ordinate and 1 for move refrence
-            System.out.println("sol doesn't exists");
+        if(soluti(0,0,1,sol,xmove,ymove)) {
+            solprint(sol, n);
+            return true;
+        }
         else
-            solprint(sol,n);
+            System.out.println("solution doesn't exists");
+
+        return false;
     }
 
-    static boolean solext(int x,int y,int move,int[][] sol,int[] xmo,int[] ymov){
-
+    static boolean soluti(int x,int y,int move,int[][] sol,int[] xmo,int[] ymov){
         if(move==siz*siz)
             return true;
+
         for(int i=0;i<siz;i++){
+            //System.out.println("in "+i);
             int nex_xmov=x+xmo[i];
             int nex_ymov=y+ymov[i];
 
-            if((nex_xmov>=0 && nex_xmov<siz && nex_ymov>=0
-                    && nex_ymov<siz && sol[nex_xmov][nex_ymov]==-1 )){
+            if(check(nex_xmov,nex_ymov,sol)){
                 sol[nex_xmov][nex_ymov]=move;
-                if(solext(nex_xmov,nex_ymov,move+1,sol,xmo,ymov))
+                if(soluti(nex_xmov,nex_ymov,move+1,sol,xmo,ymov))
                     return true;
                 else
                     sol[nex_xmov][nex_ymov]=-1;
@@ -54,8 +58,13 @@ public class knightTour {
     static void solprint(int[][] arr,int n){
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++)
-                System.out.print(arr[i][j]);
+                System.out.print(arr[i][j]+" ");
             System.out.println();
         }
+    }
+
+    static boolean check(int x,int y,int[][] sol){
+        return (x >= 0 && x < siz && y >= 0 && y < siz
+                && sol[x][y] == -1);
     }
 }
