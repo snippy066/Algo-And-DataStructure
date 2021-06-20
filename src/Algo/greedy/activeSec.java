@@ -21,5 +21,6 @@ public class activeSec {
                 i=j;
             }
         }
+        System.out.println(sb.toString());
     }
 }
