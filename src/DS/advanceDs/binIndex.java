@@ -2,7 +2,7 @@ package DS.advanceDs;
 
 import java.util.Scanner;
 
-//binary indexed tree or fenwick tree implementation zero based indexing 
+//binary indexed tree or fenwick tree implementation zero based indexing
 public class binIndex {
     private static int max= 100;    //maximum length of integer can be used
     private static int[] bi=new int[max];
