@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class binIndex {
     private static int max= 100;    //maximum length of integer can be used
     private static int[] bi=new int[max];
-    StringBuilder sb=new StringBuilder();
+    private static StringBuilder sb=new StringBuilder();
     public static void main(String[] ar){
         Scanner sc=new Scanner(System.in);
 
@@ -47,5 +47,15 @@ public class binIndex {
         }
     }
 
+    static void getSum(int index){
+        int sum=0;
+        index++;
+        while(index>0){
+            sum+=bi[index];
+
+            index-=index & (-index);
+        }
+        sb.append(sum+" ");
+    }
 
 }
