@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 //binary indexed tree or fenwick tree implementation
 public class binIndex {
-    int max= 100;    //maximum length of integer can be used
-    int[] bi=new int[max];
+    private static int max= 100;    //maximum length of integer can be used
+    private static int[] bi=new int[max];
     public static void main(String[] ar){
         Scanner sc=new Scanner(System.in);
 
@@ -22,6 +22,16 @@ public class binIndex {
         int len=arr.length;
 
         for(int i=0;i<len;i++)
-            updateBintr(arr,len,i);
+            updateBintr(i,len,arr[i]);
+    }
+
+    static void updateBintr(int ind,int length,int value){
+        ind++;
+
+        while(ind<=length){
+            bi[ind]+=value;
+
+            ind+=ind &(-ind);
+        }
     }
 }
