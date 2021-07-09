@@ -1,9 +1,8 @@
 package DS.arrays;
 
-import com.sun.org.apache.xpath.internal.operations.String;
-
 import java.util.Scanner;
 
+// range update using difference array zero base indexing
 public class differenceRangeUpd {
     private static StringBuilder sb=new StringBuilder();
     public static void main(String ar[]){
@@ -27,7 +26,7 @@ public class differenceRangeUpd {
             sb.append("\n");
         }
 
-    System.out.println(sb.toString());
+        System.out.println(sb.toString());
     }
 
     static void initArr(int[] arr1,int[] orArr){
@@ -46,12 +45,12 @@ public class differenceRangeUpd {
     }
 
     static void printArr(int[] arr,int[] dif){
-      arr[0]=dif[0];
-
-      for(int i=1;i<arr.length;i++){
-          arr[i]=dif[i]+arr[i-1];
-          sb.append(arr[i]+" ");
-      }
+        arr[0]=dif[0];
+        sb.append(arr[0]+" ");
+        for(int i=1;i<arr.length;i++){
+            arr[i]=dif[i]+arr[i-1];
+            sb.append(arr[i]+" ");
+        }
 
     }
 }
