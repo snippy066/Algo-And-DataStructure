@@ -17,7 +17,7 @@ public class binIndex {
         for(int i=0;i<n;i++)  arr[i]=sc.nextInt();
         int sumInd=sc.nextInt();
         int updVal=sc.nextInt();
-        int updInd=sc.nextInt();
+        
 
         constBintr(arr);
 
