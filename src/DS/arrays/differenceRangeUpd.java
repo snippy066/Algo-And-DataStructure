@@ -28,7 +28,12 @@ public class differenceRangeUpd {
 
     }
     static void initArr(int[] arr1,int[] orArr){
-           
+        int len=orArr.length;
+
+        arr1[0]=orArr[0];
+        arr1[len]=0;
+
+        for(int i=1;i<len;i++)  arr1[i]=orArr[i]-orArr[i-1];
     }
     static void updateArr(int[] arr,int l,int r,int val){
 
