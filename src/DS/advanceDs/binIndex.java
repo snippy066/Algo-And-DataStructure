@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class binIndex {
     private static int max= 100;    //maximum length of integer can be used
     private static int[] bi=new int[max];
+    StringBuilder sb=new StringBuilder();
     public static void main(String[] ar){
         Scanner sc=new Scanner(System.in);
 
@@ -14,8 +15,19 @@ public class binIndex {
         int[] arr=new int[n];
 
         for(int i=0;i<n;i++)  arr[i]=sc.nextInt();
+        int sumInd=sc.nextInt();
+        int updVal=sc.nextInt();
+        int updInd=sc.nextInt();
 
         constBintr(arr);
+
+       getSum(sumInd);
+
+       updateBintr(updInd,n,updVal);
+
+       getSum(sumInd);
+
+       System.out.println(sb.toString());
     }
 
     static void constBintr(int[] arr){
@@ -34,4 +46,6 @@ public class binIndex {
             ind+=ind &(-ind);
         }
     }
+
+
 }
