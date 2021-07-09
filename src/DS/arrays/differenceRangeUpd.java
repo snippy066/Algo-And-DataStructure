@@ -23,10 +23,11 @@ public class differenceRangeUpd {
             int val = sc.nextInt();
 
             updateArr(d, l, r, val);
-            sb.append("\n");
+            printArr(arr,d);
         }
 
     }
+
     static void initArr(int[] arr1,int[] orArr){
         int len=orArr.length;
 
@@ -35,7 +36,14 @@ public class differenceRangeUpd {
 
         for(int i=1;i<len;i++)  arr1[i]=orArr[i]-orArr[i-1];
     }
+
     static void updateArr(int[] arr,int l,int r,int val){
+
+        arr[l]+=val;
+        arr[r+1]-=val;
+    }
+
+    static void printArr(int[] arr,int[] dif){
 
     }
 }
