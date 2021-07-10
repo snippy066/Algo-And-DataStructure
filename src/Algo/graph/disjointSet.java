@@ -25,8 +25,21 @@ public class disjointSet {
 
 
     static boolean isCycle(Graph graph){
-        
-        return true;
+        int[] parent=new int[graph.V];
+
+        for(int i=0;i<parent.length;i++)   parent[i]=-1;
+
+        for(int i=0;i< graph.E;i++){
+
+            int x=find(parent,graph.edge[i].src);
+            int y=find(parent,graph.edge[i].des);
+
+            if(x==y)
+                return true;
+            uniGra(parent,x,y);
+
+        }
+        return false;
     }
 }
 
