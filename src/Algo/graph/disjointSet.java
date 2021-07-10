@@ -31,4 +31,13 @@ class Graph{
     class Edge{
         int src,des;
     };
+
+    Graph(int ver, int edg){
+        V=ver;
+        E=edg;
+
+        edge=new Edge[E];
+
+        for(int i=0;i<E;i++)  edge[i]=new Edge();
+    }
 }
