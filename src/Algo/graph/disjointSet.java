@@ -41,6 +41,16 @@ public class disjointSet {
         }
         return false;
     }
+
+    static int find(int[] parent ,int x){
+        if(parent[x]==-1)
+            return x;
+        return find(parent,parent[x]);
+    }
+
+    static void uniGra(int[] parent,int x, int y){
+        parent[x]=y;
+    }
 }
 
 class Graph{
