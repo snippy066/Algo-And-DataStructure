@@ -8,12 +8,12 @@ public class disjointSet {
 
         int v = sc.nextInt();
         int e = sc.nextInt();
-
+        sc.nextLine();
         Graph gr = new Graph(v, e);
         String[] s = sc.nextLine().split(" ");
         for (int i = 0; i < e; i++) {
             gr.edge[i].src = Integer.parseInt(s[i]);
-            gr.edge[i].des = Integer.parseInt(s[i + 1]);
+            gr.edge[i].des = Integer.parseInt(s[i+1]);
         }
 
         if (isCycle(gr) == true)
