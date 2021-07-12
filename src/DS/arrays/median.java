@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class median {
+    private static StringBuilder sb=new StringBuilder();
     public static void main(String ar[]){
         Scanner sc=new Scanner(System.in);
 
@@ -58,8 +59,11 @@ public class median {
                     grt.add(x);
                 med=(double)(sml.peek()+ grt.peek())/2;
             }
+            sb.append(med+" ");
 
         }
+
+        System.out.println(sb.toString());
 
     }
 }
