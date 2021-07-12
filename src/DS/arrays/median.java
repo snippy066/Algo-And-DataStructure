@@ -39,6 +39,26 @@ public class median {
                 med=(double)(sml.peek()+ grt.peek())/2;
             }
 
+            else if(sml.size()==grt.size()){
+                if(x<med){
+                    sml.add(x);
+                    med=(double) sml.peek();
+                }
+                else{
+                    grt.add(x);
+                    med=(double) grt.peek();
+                }
+            }
+            else{
+                if(x<med){
+                    grt.add(sml.remove());
+                    sml.add(x);
+                }
+                else
+                    grt.add(x);
+                med=(double)(sml.peek()+ grt.peek())/2;
+            }
+
         }
 
     }
