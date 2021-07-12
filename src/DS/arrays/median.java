@@ -23,7 +23,7 @@ public class median {
         PriorityQueue<Integer> grt=new PriorityQueue<>();
 
         sml.add(arr[0]);
-        System.out.println(arr[0]);
+        System.out.print(arr[0]+" ");
 
         double med=arr[0];
 
