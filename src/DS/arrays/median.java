@@ -1,6 +1,5 @@
 package DS.arrays;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;
@@ -19,8 +18,8 @@ public class median {
     }
 
     static void calMedi(int[] arr, int len){
-        PriorityQueue<Integer> sml=new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> smaller = new PriorityQueue<>(Collections.reverseOrder());
         PriorityQueue<Integer> grt=new PriorityQueue<>();
-        
+
     }
 }
