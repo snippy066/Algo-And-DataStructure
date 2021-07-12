@@ -18,8 +18,16 @@ public class median {
     }
 
     static void calMedi(int[] arr, int len){
-        PriorityQueue<Integer> smaller = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> smaller = new PriorityQueue<Integer>();
         PriorityQueue<Integer> grt=new PriorityQueue<>();
+
+        smaller.add(arr[0]);
+        System.out.println(arr[0]);
+
+        for(int i=1;i<len;i++){
+            int med=arr[i];
+
+        }
 
     }
 }
