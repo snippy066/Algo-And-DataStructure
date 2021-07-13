@@ -19,11 +19,11 @@ public class powerSetGen {
      int  loop=(1<<len);
 
      for(int i=0;i<loop;i++){
-
+            sb.append("{");
          for(int j=0;j<len;j++)
              if((i&(1<<j))>0)
                  sb.append(arr[j]+" ");
-
+            sb.append("}\n");
      }
      System.out.print(sb.toString());
 
