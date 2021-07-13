@@ -27,6 +27,6 @@ public class subArray {
                 maxhere=0;
         }
         System.out.println(maxSofar);
-        
+
     }
 }
