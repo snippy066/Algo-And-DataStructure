@@ -3,6 +3,7 @@ package DS.arrays;
 import java.util.Scanner;
 
 public class powerSetGen {
+    private static StringBuilder sb=new StringBuilder();
     public static void main(String ar[]){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -14,5 +15,17 @@ public class powerSetGen {
         generatePs(arr,n);
     }
 
-    
+    static void generatePs(int[] arr,int len){
+     int  loop=(1<<len);
+
+     for(int i=0;i<loop;i++){
+
+         for(int j=0;j<len;j++)
+             if((i&(1<<j))>0)
+                 sb.append(arr[j]+" ");
+
+     }
+     System.out.print(sb.toString());
+
+    }
 }
