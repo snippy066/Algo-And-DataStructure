@@ -56,12 +56,13 @@ public class huffmanCoding {
         }
 
         printHuff(root,"");
+        System.out.println(sb.toString());
     }
 
     static void printHuff(HuffmanNode root,String s){
 
         if(root.left==null && root.right==null){
-            sb.append(root.c +" : "+s);
+            sb.append(root.c +" : "+s+"\n");
             return;
         }
         printHuff(root.left,s+"0");
