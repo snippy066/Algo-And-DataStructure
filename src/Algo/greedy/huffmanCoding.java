@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class huffmanCoding {
+    private static StringBuilder sb=new StringBuilder();
     public static void main(String ar[]){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -36,6 +37,21 @@ public class huffmanCoding {
         HuffmanNode root=null;
 
         while(pq.size()>1){
+            HuffmanNode x,y;
+            x=pq.poll();
+            y=pq.poll();
+
+            HuffmanNode newTree=new HuffmanNode();
+
+            newTree.data=x.data+y.data;
+            newTree.c='-';
+
+            newTree.left=x;
+            newTree.right=y;
+
+            root=newTree;
+
+            pq.add(root);
 
         }
 
@@ -43,7 +59,14 @@ public class huffmanCoding {
     }
 
     static void printHuff(HuffmanNode root,String s){
-        
+
+        if(root.left==null && root.right==null){
+            sb.append(root.c +" : "+s);
+            return;
+        }
+        printHuff(root.left,s+"0");
+        printHuff(root.right,s+"1");
+
     }
 }
 class HuffmanNode{
