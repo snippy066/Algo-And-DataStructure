@@ -38,7 +38,7 @@ public class minOfmax {
             int sub=arr[i]-key;
 
             if(min>=sub && max<=add){
-                
+
                 if(max-sub>=add-min)    min=sub;
                 else    max=add;
             }
