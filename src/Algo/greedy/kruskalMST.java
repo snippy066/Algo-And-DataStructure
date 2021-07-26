@@ -11,7 +11,7 @@ public class kruskalMST {
 
         Graph gr=new Graph(V,E);
 
-        /* graph 
+        /* graph
                  10
             0--------1
             |  \     |
@@ -44,6 +44,9 @@ public class kruskalMST {
         gr.ed[4].src = 2;
         gr.ed[4].dest = 3;
         gr.ed[4].weight = 4;
+
+
+        gr.krusMst();
     }
 }
 class Graph{
@@ -65,4 +68,9 @@ class Graph{
             return this.weight-com.weight;
         }
     };
+
+    
+    static void krusMst(){
+
+    }
 }
