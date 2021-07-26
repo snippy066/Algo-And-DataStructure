@@ -69,7 +69,7 @@ class Graph{
         }
     };
 
-    
+
     static void krusMst(){
 
     }
