@@ -70,7 +70,9 @@ class Graph{
     };
 
 
-    static void krusMst(){
+    void krusMst(){
+        Edge result[] =new Edge[V];
+
 
     }
 }
