@@ -86,9 +86,28 @@ class Graph{
             sb[i].parent=-1;
             sb[i].rank=0;
         }
-        
+
+        int i=0,e=0;
+
+        while(e<V-1){
+            Edge next=ed[i];
+            int x=find(sb,next.src);
+            int y=find(sb,next.dest);
+
+            
+        }
 
     }
+
+    int find(Subset[] sb, int i){
+
+        return 0;
+    }
+
+    void union(Subset[] sb, int x, int y){
+
+    }
+
 
     class Subset{
         int parent,rank;
