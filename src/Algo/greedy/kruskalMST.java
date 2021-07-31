@@ -1,5 +1,6 @@
 package Algo.greedy;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class kruskalMST {
@@ -73,6 +74,23 @@ class Graph{
     void krusMst(){
         Edge result[] =new Edge[V];
 
+        for(int i=0;i<V;i++)    result[i]=new Edge();
 
+        Arrays.sort(ed);
+
+        Subset sb[] =new Subset[V];
+
+        for(int i=0;i<V;i++)    sb[i]=new Subset();
+
+        for(int i=0;i<V;i++){
+            sb[i].parent=-1;
+            sb[i].rank=0;
+        }
+        
+
+    }
+
+    class Subset{
+        int parent,rank;
     }
 }
