@@ -94,18 +94,44 @@ class Graph{
             int x=find(sb,next.src);
             int y=find(sb,next.dest);
 
-            
+            if(x!=y){
+                result[e]=next;
+                union(sb,x,y);
+                e++;
+            }
+            i++;
         }
+        int minimumCost = 0;
+        for (i = 0; i < e; ++i)
+        {
+            System.out.println(result[i].src + " -- "
+                    + result[i].dest
+                    + " == " + result[i].weight);
+            minimumCost += result[i].weight;
+        }
+        System.out.println("Minimum Cost Spanning Tree "
+                + minimumCost);
 
     }
 
     int find(Subset[] sb, int i){
 
-        return 0;
+        if(sb[i].parent==-1)
+            return i;
+
+        return find(sb,sb[i].parent);
     }
 
     void union(Subset[] sb, int x, int y){
+        int rootx=find(sb,x);
+        int rooty=find(sb,y);
 
+        if(sb[rootx].rank < sb[rooty].rank) sb[rootx].parent=rooty;
+        else if(sb[rootx].rank > sb[rooty].rank)    sb[rooty].parent=rootx;
+        else{
+            sb[rooty].parent=rootx;
+            sb[rootx].rank++;
+        }
     }
 
 
