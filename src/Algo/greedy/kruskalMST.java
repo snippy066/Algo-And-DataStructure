@@ -1,14 +1,14 @@
 package Algo.greedy;
 
 import java.util.Arrays;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class kruskalMST {
     public static void  main(String ar[]){
-        Scanner in=new Scanner(System.in);
+        //Scanner in=new Scanner(System.in);
 
-        int E=in.nextInt();
-        int V=in.nextInt();
+        int E=5;    //in.nextInt();
+        int V=4;    //in.nextInt();
 
         Graph gr=new Graph(V,E);
 
@@ -75,7 +75,6 @@ class Graph{
         Edge result[] =new Edge[V];
 
         for(int i=0;i<V;i++)    result[i]=new Edge();
-
         Arrays.sort(ed);
 
         Subset sb[] =new Subset[V];
