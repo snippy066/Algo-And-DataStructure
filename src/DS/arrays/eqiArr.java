@@ -14,6 +14,7 @@ public class eqiArr {
         for(int i=0;i<n;i++)    arr[i]=sc.nextInt();
 
         int index=equilib(arr,n);
+        System.out.println(index);
     }
 
     static int equilib(int[] arr,int len){
@@ -28,12 +29,12 @@ public class eqiArr {
 
         for(int i=1;i<len;i++){
             front[i]=front[i-1]+arr[i];
-            back[len-i-1]=back[len-1]+arr[len-i-1];
+            back[len-i-1]=back[len-i]+arr[len-i-1];
         }
 
         for(int i=0;i<len;i++){
             if(back[i]==front[i])
-                return i;
+                return (i+1);
         }
         return -1;
     }
