@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class fibonacci {
     private static StringBuilder sb=new StringBuilder();
+    private static int fib[] =new int[1000];
     public static void main(String ar[]){
         Scanner in=new Scanner(System.in);
 
@@ -17,27 +18,24 @@ public class fibonacci {
         else
             val=memo(num);
 
-        System.out.print(sb.toString());
+        System.out.print(val);
     }
 
     static int tab(int n){
-        int[] fib=new int[n];
-        if(n<=1)
-            fib[n]=n;
+        int[] fib=new int[n+1];
+        fib[0]=0;
+        fib[1]=1;
         for(int i=2;i<=n;i++)
             fib[i]=fib[i-1]+fib[i-2];
         return fib[n];
     }
 
     static int memo(int n){
-        int fib[] =new int[Integer.MAX_VALUE];
-
-        for(int i=0;i<fib.length;i++)   fib[i]=-1;
-
-        if(fib[n]==-1){
-            if(n<=1)    fib[n]=n;
+        if(fib[n]==0){
+            if(n<=1)
+                fib[n]=n;
             else
-                fib[n]=memo(n-1)+memo(n-1)
+                fib[n]=memo(n-1)+memo(n-2);
         }
         return fib[n];
     }
