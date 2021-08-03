@@ -25,10 +25,12 @@ public class loop {
         System.out.println(search(li.head,key));
 
     }
+
    void push(int ele){
         Node ne=new Node(ele);
         ne.next=head;
         head=ne;
+
     }
 
     static boolean search(Node head,int key){
