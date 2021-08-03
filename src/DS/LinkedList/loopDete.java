@@ -34,6 +34,7 @@ class linkedList{
             data=d;
             next=null;
         }
+
     }
 
     boolean testLoop(Node root){
