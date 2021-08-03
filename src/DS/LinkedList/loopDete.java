@@ -13,18 +13,17 @@ public class loopDete {
 
         li.head.next.next.next.next=li.head;        //created loop for testing
 
-        testLoop();
-    }
-
-    static void testLoop(){
+        System.out.println(li.testLoop(li.head));
 
     }
 }
 
 class linkedList{
     Node head;
-    static void push(int val){
-
+    void push(int val){
+    Node nextnode=new Node(val);
+    nextnode.next=head;
+    head=nextnode;
     }
 
     class Node{
@@ -37,4 +36,19 @@ class linkedList{
         }
     }
 
+    boolean testLoop(Node root){
+        if(root==null)
+            return false;
+
+        Node slow_p=root, fast_p=root;
+
+        while(slow_p!=null && fast_p!=null  && fast_p.next!=null){
+            slow_p=slow_p.next;
+            fast_p=fast_p.next.next;
+
+            if(slow_p==fast_p)
+                return true;
+        }
+        return false;
+    }
 }
