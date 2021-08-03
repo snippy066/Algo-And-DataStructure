@@ -9,11 +9,11 @@ import java.util.Scanner;
 10 ,20 ,30 ,40
 head->40->30->20->10
  */
-public class loop {
+public class searching {
     Node head;
     public static void main(String ar[]){
 
-        loop li=new loop();
+        searching li=new searching();
 
         Scanner in=new Scanner(System.in);
         int n=in.nextInt();
