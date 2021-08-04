@@ -50,6 +50,27 @@ public class mergLink {
         return sortlistNode;
     }
 
+    static  Node sortNode(Node a , Node b){
+        Node result=null;
+
+        if(a==null)
+            return b;
+        if(b==null)
+            return a;
+
+        if(a.data<b.data){
+            result =a;
+            result.next=sortNode(a.next,b);
+        }
+        else{
+            result=b;
+            result.next=sortNode(a,b.next);
+        }
+
+        return result;
+        
+    }
+
     static Node getMid(Node n){
         if(n==null)
             return n;
