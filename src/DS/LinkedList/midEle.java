@@ -1,6 +1,10 @@
 //printing middle element of linked list
 //package DS.LinkedList;
 
+/*
+mid element 1->2->3->4->5  ans=3
+mid element 1->2->3->4  and=3
+ */
 import java.util.Scanner;
 
 public class midEle {
@@ -14,6 +18,7 @@ public class midEle {
         for(int i=0;i<n;i++)    li.push(in.nextInt());
 
         int val=printMid(li,li.head);
+        System.out.println(val);
     }
 
     static int printMid(linkedList list,linkedList.Node root){
