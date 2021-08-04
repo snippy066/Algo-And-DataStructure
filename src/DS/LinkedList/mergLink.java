@@ -4,6 +4,7 @@
 public class mergLink {
     private static StringBuilder sb=new StringBuilder();
     static Node head;
+
     public static void main(String ar[]){
 
         mergLink li=new mergLink();
@@ -16,14 +17,15 @@ public class mergLink {
         li.push(2);
 
         sb.append("linked list before sorting: ");
-        while(head!=null) {
-            sb.append(head.data+" ");
-            head=head.next;
+        Node temp=head;
+        while(temp!=null) {
+            sb.append(temp.data+" ");
+            temp=temp.next;
         }
 
-        head=mergeSort(head);
+        head=li.mergeSort(head);
 
-        sb.append("\n linked list aftor sorting :");
+        sb.append("\nlinked list after sorting :");
         while(head!=null) {
             sb.append(head.data+" ");
             head=head.next;
@@ -32,13 +34,15 @@ public class mergLink {
         System.out.println(sb.toString());
     }
 
-    static Node mergeSort(Node root){
+    Node mergeSort(Node root){
 
         if(root==null || root.next==null)
             return root;
 
         Node midnode=getMid(root);
         Node nextOfmid=midnode.next;
+
+        //System.out.println(midnode.data);
 
         midnode.next=null;
 
@@ -50,7 +54,7 @@ public class mergLink {
         return sortlistNode;
     }
 
-    static  Node sortNode(Node a , Node b){
+    Node sortNode(Node a , Node b){
         Node result=null;
 
         if(a==null)
@@ -68,15 +72,15 @@ public class mergLink {
         }
 
         return result;
-        
+
     }
 
-    static Node getMid(Node n){
+    Node getMid(Node n){
         if(n==null)
             return n;
         Node slow_p=n, fast_p=n;
 
-        while(slow_p!=null && fast_p!=null && fast_p.next!=null){
+        while( fast_p.next!=null && fast_p.next.next!=null){
             slow_p=slow_p.next;
             fast_p=fast_p.next.next;
         }
