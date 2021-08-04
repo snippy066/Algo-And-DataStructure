@@ -20,6 +20,7 @@ public class mergLink {
             sb.append(head.data+" ");
             head=head.next;
         }
+
         head=mergeSort(head);
 
         sb.append("\n linked list aftor sorting :");
@@ -33,8 +34,33 @@ public class mergLink {
 
     static Node mergeSort(Node root){
 
+        if(root==null || root.next==null)
+            return root;
 
-        return root;
+        Node midnode=getMid(root);
+        Node nextOfmid=midnode.next;
+
+        midnode.next=null;
+
+        Node left=mergeSort(root);
+        Node right=mergeSort(nextOfmid);
+
+        Node sortlistNode=sortNode(left,right);
+
+        return sortlistNode;
+    }
+
+    static Node getMid(Node n){
+        if(n==null)
+            return n;
+        Node slow_p=n, fast_p=n;
+
+        while(slow_p!=null && fast_p!=null && fast_p.next!=null){
+            slow_p=slow_p.next;
+            fast_p=fast_p.next.next;
+        }
+
+        return slow_p;
     }
 
     static void push(int data){
