@@ -42,7 +42,6 @@ class Node{
     }
 
 }
-
     class Solution {
         Node deleteMid(Node head) {
             Node slow_p=head,fast_p=head;
@@ -60,4 +59,4 @@ class Node{
             return head;
         }
     }
-}
+
