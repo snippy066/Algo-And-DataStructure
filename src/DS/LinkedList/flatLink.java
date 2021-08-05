@@ -71,9 +71,10 @@ public class flatLink {
             result = a;
             result.next=merge(a.down,b);
         }
+
         else {
             result = b;
-            result.next=merge(a,b.down)
+            result.next=merge(a,b.down);
         }
 
         result.next=null;
@@ -99,4 +100,3 @@ public class flatLink {
         }
     }
 }
-
