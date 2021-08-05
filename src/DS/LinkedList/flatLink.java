@@ -1,6 +1,8 @@
 //package DS.LinkedList;
 
 
+import javax.security.auth.login.CredentialException;
+
 public class flatLink {
     Node head;
     private static StringBuilder sb=new StringBuilder();
@@ -58,7 +60,24 @@ public class flatLink {
     }
 
     Node merge(Node a, Node b){
-        
+        if(a.next==null)
+            return  b;
+        else if(b.next==null)
+            return a;
+
+        Node result;
+
+        if(a.data<b.data) {
+            result = a;
+            result.next=merge(a.down,b);
+        }
+        else {
+            result = b;
+            result.next=merge(a,b.down)
+        }
+
+        result.next=null;
+        return result;
     }
 
     Node push(Node root,int data){
