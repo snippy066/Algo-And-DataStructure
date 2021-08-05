@@ -47,7 +47,18 @@ public class flatLink {
     }
 
     Node flatten(Node root){
+        if(root==null || root.next==null)
+            return root;
 
+        root.next=flatten(root.next);
+
+        root=merge(root,root.next);
+
+        return root;
+    }
+
+    Node merge(Node a, Node b){
+        
     }
 
     Node push(Node root,int data){
