@@ -3,7 +3,7 @@
 import java.util.*;
 import java.io.*;
 
-    class Node{
+class Node{
         int data;
         Node next;
 
@@ -13,7 +13,7 @@ import java.io.*;
         }
 
     }
-    class delteMid{
+    public class delteMid{
         static void printList(Node node)
         {
             while (node != null)
@@ -42,17 +42,7 @@ import java.io.*;
             }
         }
     }
-
-// } Driver Code Ends
-
-
-/*
-class Node {
-    int data;
-    Node next;
-    Node(int d)  { data = d;  next = null; }
-}
-*/
+    
 
     class Solution {
         Node deleteMid(Node head) {
