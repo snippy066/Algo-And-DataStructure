@@ -3,6 +3,7 @@
 
 public class flatLink {
     Node head;
+    private static StringBuilder sb=new StringBuilder();
     public static void main(String[] ar){
 
         flatLink list=new flatLink();
@@ -37,7 +38,15 @@ public class flatLink {
         list.head.next.next.next = list.push(list.head.next.next.next, 35);
         list.head.next.next.next = list.push(list.head.next.next.next, 28);
 
+        Node root=list.flatten(list.head);
 
+        while(root.next!=null) sb.append(root.data+" ");
+
+        System.out.println(sb.toString());
+
+    }
+
+    Node flatten(Node root){
 
     }
 
@@ -45,7 +54,7 @@ public class flatLink {
         Node newnode =new Node(data);
         newnode.down=root;
         root=newnode;
-        
+
         return root;
     }
 
