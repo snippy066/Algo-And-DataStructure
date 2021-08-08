@@ -13,7 +13,7 @@ public class implimentation {
 
         for(Integer key:element) st.add(key);
 
-        for(int i=0;i<element.length;i++)   System.out.println(st.poll());
+        for(int i=0;i<element.length;i++)   System.out.print(st.poll()+" ");
     }
 }
 
