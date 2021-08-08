@@ -24,5 +24,25 @@ class stack<t>{
         q1=new ArrayDeque<>();
         q2=new ArrayDeque<>();
     }
-    
+
+    void add(t data){
+        while(!q1.isEmpty())
+            q2.add(q1.poll());
+
+        q1.add(data);
+
+        while(!q2.isEmpty())
+            q1.add(q2.poll());
+    }
+
+    t poll(){
+        if(q1.isEmpty()){
+            System.out.println("Uderflow");
+            System.exit(0);
+        }
+
+        t val=q1.poll();
+
+        return val;
+    }
 }
