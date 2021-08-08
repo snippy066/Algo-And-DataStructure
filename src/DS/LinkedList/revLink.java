@@ -3,7 +3,7 @@
 import java.util.Scanner;
 
 public class revLink {
-     static Node head;
+     static node head;
         public static void main (String[] args) {
             Scanner sc = new Scanner(System.in);
             int t = sc.nextInt();
@@ -45,7 +45,7 @@ public class revLink {
     {
         public static node reverse(node root, int k)
         {
-            node prev=null,next=null,current=node;
+            node prev=null,next=null,current=root;
             if(root==null||root.next==null)
                 return root;
             int count=0;
