@@ -15,6 +15,29 @@ public class stSort {
         System.out.println("Stack before sorting"+st);
         sortStack(st);
         System.out.println("Stack after sorting"+st);
-        
+
+    }
+    void sortStack(Stack<Integer> st){
+        if(st.isEmpty())
+            return;
+
+        int top=st.pop();
+        sortStack(st);
+
+        sortIns(st,top);
+    }
+
+    void sortIns(Stack<Integer> st, int key){
+
+        if(st.isEmpty() || key>=st.peek()) {
+            st.push(key);
+            return;
+        }
+
+        int top=st.pop();
+
+        sortIns(st,top);
+
+        st.push(top);
     }
 }
