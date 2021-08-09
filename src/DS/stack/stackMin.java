@@ -56,12 +56,15 @@ class minele{
         int temp=m;
         m=2*m-top;
         return m;
-
     }
     int size(){
         return st.size();
     }
     boolean empty(){
         return st.isEmpty();
+    }
+
+    int min(){
+        return m;
     }
 }
