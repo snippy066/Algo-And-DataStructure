@@ -7,4 +7,9 @@ public class strCode {
 
         System.out.println("The minimum number is " + decode(st));
     }
+    static String decode(String s){
+     String result="";
+
+     return result;
+    }
 }
