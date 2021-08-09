@@ -17,11 +17,15 @@ public class stackMin {
         st.push(3);
         System.out.println(st.min());
 
-        System.out.println(st.pop());
+        System.out.println("popped element "+st.pop());
         System.out.println(st.min());
 
-        System.out.println(st.pop());
+        System.out.println("popped element "+st.pop());
         System.out.println(st.min());
+
+        System.out.println("popped element "+st.pop());
+        System.out.println("popped element "+st.pop());
+        System.out.println("popped element "+st.pop());
     }
 }
 
@@ -49,13 +53,14 @@ class minele{
             System.out.println("uderflow");
             return -1;
         }
-        int top=st.peek();
+        int top=st.pop();
 
-        if(top>m)   return top;
-
-        int temp=m;
-        m=2*m-top;
-        return m;
+        if(top<m) {
+            int temp = m;
+            m = 2 * m - top;
+            return temp;
+        }
+        return top;
     }
     int size(){
         return st.size();
