@@ -61,6 +61,7 @@ class minimumStack {
         return tp;
     }
     int min(){
+
         if(aux.isEmpty()){
             System.out.println("Underflow");
             return -1;
