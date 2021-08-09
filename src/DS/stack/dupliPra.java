@@ -18,6 +18,17 @@ public class dupliPra {
 
         for(Character c:ex.toCharArray()){
             if(c!=')')  st.push(c);
+
+            else{
+                int flag=0;
+                if(st.peek()=='(') return true;
+
+                while(st.peek()!='(' && !st.isEmpty())
+                    st.pop();
+
+                if(st.pop()=='(')
+                    return true;
+            }
         }
         return false;
     }
