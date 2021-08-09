@@ -16,6 +16,17 @@ public class revStak {
         System.out.println("reversed stack: "+st);
     }
     static void rev(Stack<Integer> st){
-        
+        if(st.isEmpty())
+            return;
+
+        int top=st.pop();
+
+        rev(st);
+
+        revInst(st,top);
+    }
+
+    static void revInst(Stack<Integer> st,int key){
+        st.push(key);
     }
 }
