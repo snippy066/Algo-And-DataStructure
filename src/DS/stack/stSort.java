@@ -17,7 +17,8 @@ public class stSort {
         System.out.println("Stack after sorting"+st);
 
     }
-    void sortStack(Stack<Integer> st){
+
+    static void sortStack(Stack<Integer> st){
         if(st.isEmpty())
             return;
 
@@ -27,8 +28,7 @@ public class stSort {
         sortIns(st,top);
     }
 
-    void sortIns(Stack<Integer> st, int key){
-
+    static void sortIns(Stack<Integer> st, int key){
         if(st.isEmpty() || key>=st.peek()) {
             st.push(key);
             return;
@@ -36,8 +36,8 @@ public class stSort {
 
         int top=st.pop();
 
-        sortIns(st,top);
+        sortIns(st,key);
 
-        st.push(top);
+        st.push(top);   //pushing the element back which were popped
     }
 }
