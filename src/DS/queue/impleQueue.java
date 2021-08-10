@@ -44,7 +44,6 @@ class queue{
     int dequeue(){
 
         if(front==null){
-            rear=null;
             System.out.println("Uderflow");
             return -1;
         }
@@ -53,6 +52,9 @@ class queue{
         int temp=front.data;
 
         front=front.next;
+        if(front==null)
+            rear=null;
+
         return temp;
     }
 
@@ -62,8 +64,11 @@ class queue{
     }
 
     int peek(){
+        if(front!=null)
+            return front.data;
 
-        return 0;
+        System.out.println("underflow");
+        return -1;
     }
 
     class  Node{
