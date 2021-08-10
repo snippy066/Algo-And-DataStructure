@@ -28,17 +28,37 @@ class queue{
     Node rear=null, front=null;
 
     void enqueue(int key){
+        Node newnode=new Node(key);
 
+        if(front==null){
+            front=newnode;
+            rear=newnode;
+        }
+        else{
+            rear.next=newnode;
+            rear=newnode;
+        }
+        System.out.println("inserting data :" +key);
     }
 
     int dequeue(){
 
-        return -1;
+        if(front==null){
+            rear=null;
+            System.out.println("Uderflow");
+            return -1;
+        }
+
+        System.out.println("dequeuing data : "+front.data);
+        int temp=front.data;
+
+        front=front.next;
+        return temp;
     }
 
     boolean isEmpty(){
 
-        return false;
+        return rear==null && front==null;
     }
 
     int peek(){
