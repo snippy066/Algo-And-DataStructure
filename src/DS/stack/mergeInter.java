@@ -15,7 +15,7 @@ public class mergeInter {
 
     static void mergeIntervals(List<Interval> in){
         Collections.sort(in,new sortInt());
-        //System.out.println(in);
+
         Stack<Interval> st=new Stack<>();
         for(Interval c:in){
             if(st.isEmpty() || c.begin>st.peek().end)     st.push(c);
