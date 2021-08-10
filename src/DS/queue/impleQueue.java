@@ -23,3 +23,35 @@ public class impleQueue {
         }
     }
 }
+
+class queue{
+    Node rear=null, front=null;
+
+    void enqueue(int key){
+
+    }
+
+    int dequeue(){
+
+        return -1;
+    }
+
+    boolean isEmpty(){
+
+        return false;
+    }
+
+    int peek(){
+
+        return 0;
+    }
+
+    class  Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+            next=null;
+        }
+    }
+}
