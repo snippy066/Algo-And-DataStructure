@@ -1,6 +1,8 @@
 //package DS.stack;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class mergeInter {
@@ -13,13 +15,27 @@ public class mergeInter {
 
         mergeIntervals(in);
     }
+
+    static void mergeIntervals(List<Interval> in){
+        Collections.sort(in,new sortInt());
+    }
 }
 
-class Interval{
-    int begin,end;
-    Interval(int b,int e){
-        begin=b;
-        end=e;
+class sortInt implements Comparator<Interval>{
+    public int compare(Interval a, Interval b){
+        return  a.begin-b.begin;
     }
-    
+}
+class Interval {
+    int begin, end;
+
+    Interval(int b, int e) {
+        begin = b;
+        end = e;
+    }
+
+    @Override
+    String toString() {
+        return "(" + begin + " , " + end + ")";
+    }
 }
