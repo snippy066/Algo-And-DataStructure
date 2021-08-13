@@ -2,6 +2,7 @@
 //finding next greater element in array
 
 import java.util.Arrays;
+import java.util.Stack;
 
 /*
 Input:  [2, 7, 3, 5, 4, 6, 8]
@@ -17,5 +18,24 @@ public class nexGre {
 
         int[] result = findNextG(arr);
         System.out.println(Arrays.toString(result));
+    }
+
+    static int[] findNextG(int[] arr){
+        int len=arr.length;
+        int[] rs=new int[len];
+
+        Stack<Integer> st=new Stack<>();
+
+        for(int i=0;i<len;i++){
+
+            while(!st.isEmpty() && st.peek()<arr[i]){
+                rs[st.pop()]=arr[i];
+            }
+            st.push(i);
+
+        }
+
+
+        return rs;
     }
 }
