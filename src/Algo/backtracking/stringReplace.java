@@ -10,17 +10,19 @@ public class stringReplace {
 
     static void printAllCombinations(char[] patter,int i){
         if(i==patter.length){
-            System.out.println(patter.toString());
+            System.out.println(patter);
             return;
         }
 
         if(patter[i]=='?'){
-            for(char ch=0;ch<=1;ch++){
+            for(char ch='0';ch<='1';ch++){
                 patter[i]=ch;
                 printAllCombinations(patter,i+1);
                 patter[i]='?';  //backtracking
             }
-
+            return;
         }
+
+        printAllCombinations(patter,i+1);
     }
 }
