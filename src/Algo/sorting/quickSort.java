@@ -36,7 +36,22 @@ public class quickSort {
         }
     }
 
+    static int partition(int[] arr,int st, int end){
+        int pivot=arr[end];
 
+        int pInd=st;
+
+        for(int i=st;i<end;i++ ){
+
+            if(arr[i]<=pivot){
+                swap(arr,i,pInd);
+                pInd++;
+            }
+        }
+        swap(arr,pInd,end);
+
+        return pInd;
+    }
     static void swap(int[] a,int i, int j){
         int temp=a[i];
         a[i]=a[j];
