@@ -6,10 +6,12 @@ import netscape.security.UserTarget;
 import java.util.Stack;
 
 public class StringReplace {
+    static StringBuilder sb=new StringBuilder();
     public static void main(String ar[]){
         String str = "1?11?00?1?";
 
         printAllCombinations(str);
+        System.out.println(sb.toString());
     }
 
     static void printAllCombinations(String str){
