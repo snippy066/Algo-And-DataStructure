@@ -2,6 +2,8 @@
 //iterative and recursive approach
 
 public class inorderTravel {
+    static StringBuilder sb=new StringBuilder();
+
     //node class to construct tree
     static class Node{
         int data;
@@ -38,11 +40,19 @@ public class inorderTravel {
         recursiveInord(root);
         iterativeInord(root);
 
+        System.out.println(sb.toString());
     }
 
 //recursive approach
     static void recursiveInord(Node head){
+        if(head==null)
+            return;
 
+        recursiveInord(head.left);
+
+        sb.append(head.data+" ");
+
+        recursiveInord(head.right);
     }
 
 //iterative approach
