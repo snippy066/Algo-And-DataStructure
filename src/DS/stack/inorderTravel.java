@@ -14,7 +14,7 @@ public class inorderTravel {
             data=d;
             right=left=null;
         }
-    }
+    }// end of node class
 
     public static void main(String ar[]){
          /* Construct the following tree
@@ -65,19 +65,18 @@ public class inorderTravel {
         Node curr=head;
 
         while(!st.isEmpty() || curr!=null){
-
             if(curr!=null){
                 st.push(curr);
                 curr=curr.left;
             }
             else{
                 Node tem=st.pop();
-                sb.append(tem.data);
+                sb.append(tem.data+" ");
                 curr=tem.right;
             }
 
-        }
+        }//end of while
 
-    }
+    } //end of iterative method
 
-}
+}// end of class
