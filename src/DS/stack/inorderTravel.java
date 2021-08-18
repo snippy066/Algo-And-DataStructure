@@ -1,6 +1,8 @@
 //package DS.stack;
 //iterative and recursive approach
 
+import java.util.Stack;
+
 public class inorderTravel {
     static StringBuilder sb=new StringBuilder();
 
@@ -57,6 +59,24 @@ public class inorderTravel {
 
 //iterative approach
     static void iterativeInord(Node head){
+        sb.append("\n");
+        Stack<Node> st=new Stack<>();
+
+        Node curr=head;
+
+        while(!st.isEmpty() || curr!=null){
+
+            if(curr!=null){
+                st.push(curr);
+                curr=curr.left;
+            }
+            else{
+                Node tem=st.pop();
+                sb.append(tem.data);
+                curr=tem.right;
+            }
+
+        }
 
     }
 
