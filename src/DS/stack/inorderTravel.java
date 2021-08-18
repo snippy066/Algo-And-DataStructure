@@ -2,6 +2,16 @@
 //iterative and recursive approach
 
 public class inorderTravel {
+    //node class to construct tree
+    static class Node{
+        int data;
+        Node right,left;
+        Node(int d){
+            data=d;
+            right=left=null;
+        }
+    }
+
     public static void main(String ar[]){
          /* Construct the following tree
                    1
@@ -24,17 +34,20 @@ public class inorderTravel {
         root.right.right = new Node(6);
         root.right.left.left = new Node(7);
         root.right.left.right = new Node(8);
+
+        recursiveInord(root);
+        iterativeInord(root);
+
     }
 
-    static class Node{
-        int data;
-        Node right,left;
-        Node(int d){
-            data=d;
-            right=left=null;
-        }
-    }
-}
 //recursive approach
+    static void recursiveInord(Node head){
+
+    }
 
 //iterative approach
+    static void iterativeInord(Node head){
+
+    }
+
+}
