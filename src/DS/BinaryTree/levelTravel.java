@@ -3,10 +3,16 @@
 
 public class levelTravel {
 
-    class Node{
+    static class Node{
+        int data;
+        Node left,right;
 
+        Node(int d){
+            data=d;
+            left=right=null;
+        }
     }
-    
+
     public static void main(String ar[]){
         Node root = new Node(15);
         root.left = new Node(10);
