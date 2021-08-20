@@ -38,7 +38,7 @@ public class levelOrd {
 
         levelOrderTraversal(root);
 
-        System.out.println();
+        System.out.println(sb.toString());
     }
 
     static void levelOrderTraversal(Node head){
