@@ -34,4 +34,21 @@ public class levelTravel {
         }
 
     }
+
+    static boolean printLevel(Node root, int level){
+
+        if(root==null)
+            return false;
+
+        if(level==1){
+            sb.append(root.data+" ");
+            return true;
+        }
+
+        boolean leftTree=printLevel(root.left, level-1);
+        boolean rightTree=printLevel(root.right, level-1);
+
+        return leftTree||rightTree;
+
+    }
 }
