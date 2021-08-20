@@ -48,7 +48,7 @@ public class levelOrd {
         while(!q.isEmpty()){
             curr=q.poll();
 
-            sb.append(q.data+" ");
+            sb.append(curr.data+" ");
             if(curr.left!=null) {
                 q.add(curr.left);
             }
