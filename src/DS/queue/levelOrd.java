@@ -35,6 +35,8 @@ public class levelOrd {
         root.right.right = new Node(25);
 
         levelOrderTraversal(root);
+
+        System.out.println();
     }
 
     static void levelOrderTraversal(Node head){
@@ -46,7 +48,7 @@ public class levelOrd {
         while(!q.isEmpty()){
             curr=q.poll();
 
-            sb.append(q.data);
+            sb.append(q.data+" ");
             if(curr.left!=null) {
                 q.add(curr.left);
             }
