@@ -3,6 +3,8 @@
 
 public class levelTravel {
 
+    static StringBuilder sb=new StringBuilder();
+
     static class Node{
         int data;
         Node left,right;
@@ -33,7 +35,7 @@ public class levelTravel {
             level++;
         }
 
-    }
+    }//end
 
     static boolean printLevel(Node root, int level){
 
@@ -50,5 +52,5 @@ public class levelTravel {
 
         return leftTree||rightTree;
 
-    }
+    }//end of printLevel method
 }
