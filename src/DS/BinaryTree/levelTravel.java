@@ -25,6 +25,8 @@ public class levelTravel {
         root.right.right = new Node(25);
 
         levelOrderTraversal(root);
+
+        System.out.println(sb.toString());
     }
 
     static void levelOrderTraversal(Node head){
