@@ -6,6 +6,8 @@ import java.util.Queue;
 
 public class levelOrd {
 
+    static StringBuilder sb=new StringBuilder();
+
     static class Node{
         int data;
        Node left,right;
