@@ -1,9 +1,10 @@
 //package DS.queue;
 //level order traversal of binary tree using queue
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class levelOrd {
-    
-    static StringBuilder sb=new StringBuilder();
 
     static class Node{
         int data;
@@ -34,7 +35,15 @@ public class levelOrd {
         root.right.right = new levelTravel.Node(25);
 
         levelOrderTraversal(root);
+    }
 
-        System.out.println(sb.toString());
+    static void levelOrderTraversal(Node head){
+        Queue<Node> q=new ArrayDeque<>();
+
+        q.add(head);
+
+        while(!q.isEmpty()){
+            
+        }
     }
 }
