@@ -8,7 +8,7 @@ public class levelOrd {
 
     static class Node{
         int data;
-        levelTravel.Node left,right;
+       Node left,right;
 
         Node(int d){
             data=d;
@@ -26,13 +26,13 @@ public class levelOrd {
              8     12  16   25
        */
 
-        levelTravel.Node root = new levelTravel.Node(15);
-        root.left = new levelTravel.Node(10);
-        root.right = new levelTravel.Node(20);
-        root.left.left = new levelTravel.Node(8);
-        root.left.right = new levelTravel.Node(12);
-        root.right.left = new levelTravel.Node(16);
-        root.right.right = new levelTravel.Node(25);
+        Node root = new Node(15);
+        root.left = new Node(10);
+        root.right = new Node(20);
+        root.left.left = new Node(8);
+        root.left.right = new Node(12);
+        root.right.left = new Node(16);
+        root.right.right = new Node(25);
 
         levelOrderTraversal(root);
     }
@@ -47,11 +47,12 @@ public class levelOrd {
             curr=q.poll();
 
             sb.append(q.data);
-            if(curr.left!=null)
+            if(curr.left!=null) {
                 q.add(curr.left);
-            if(curr.right!=null)
+            }
+            if(curr.right!=null) {
                 q.add(curr.right);
-
+            }
         }
 
     }
