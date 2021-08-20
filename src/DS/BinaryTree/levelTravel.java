@@ -24,4 +24,14 @@ public class levelTravel {
 
         levelOrderTraversal(root);
     }
+
+    static void levelOrderTraversal(Node head){
+
+        int level=1;
+
+        while(printLevel(head,level)){
+            level++;
+        }
+
+    }
 }
