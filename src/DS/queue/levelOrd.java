@@ -41,9 +41,18 @@ public class levelOrd {
         Queue<Node> q=new ArrayDeque<>();
 
         q.add(head);
+        Node curr;
 
         while(!q.isEmpty()){
-            
+            curr=q.poll();
+
+            sb.append(q.data);
+            if(curr.left!=null)
+                q.add(curr.left);
+            if(curr.right!=null)
+                q.add(curr.right);
+
         }
+
     }
 }
