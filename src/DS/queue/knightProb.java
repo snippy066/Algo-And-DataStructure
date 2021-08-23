@@ -61,7 +61,7 @@ public class knightProb {
                     int x1=x+row[i];
                     int y1=y+col[i];
 
-                    if(isValid(x1,y1)){
+                    if(isValid(x1,y1,size)){
                         q.add(new node(x1,y1,dis+1));
                     }
                 }
@@ -69,6 +69,13 @@ public class knightProb {
         }
 
         return -1;
+    }
+    static boolean isValid(int x,int y,int n){
+        if (x < 0 || y < 0 || x >= N || y >= N) {
+            return false;
+        }
+
+        return true;
     }
 
 }
