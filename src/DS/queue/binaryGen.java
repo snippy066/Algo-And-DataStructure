@@ -6,6 +6,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class binaryGen {
+    static StringBuilder sb=new StringBuilder();
     public static void main(String ar[]){
         Scanner sc=new Scanner(System.in);
 
@@ -21,7 +22,12 @@ public class binaryGen {
         q.add("1");
 
         while(!q.isEmpty()){
-            
+            String s=q.poll();
+
+            q.add(s+"0");
+            q.add(s+"1");
+
+            sb.append(s);
         }
     }
 }
