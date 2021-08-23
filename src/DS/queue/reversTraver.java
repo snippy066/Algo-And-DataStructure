@@ -20,6 +20,8 @@ public class reversTraver {
     }
 
     public static void main(String ar[]){
+
+        
         Node root = new Node(15);
         root.left = new Node(10);
         root.right = new Node(20);
@@ -28,13 +30,13 @@ public class reversTraver {
         root.right.left = new Node(16);
         root.right.right = new Node(25);
 
-        revBin(Node root);
+        revBin(root);
         System.out.println("reverse of the binary tree is : "+ sb.toString());
     }
 
     static void revBin(Node root){
         Queue<Node> q=new ArrayDeque<>();
-        Stack<Node> st=new Stack<>();
+        Stack<Integer> st=new Stack<>();
 
         q.add(root);
 
@@ -49,7 +51,7 @@ public class reversTraver {
                 if(node.right!=null)
                     q.add(node.right);
 
-                st.push(node);
+                st.push(node.data);
             }
         }
 
