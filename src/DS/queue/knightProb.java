@@ -11,11 +11,17 @@ public class knightProb {
 
     }
     static class node{
-        int dist;
-        int x,y;
+        int dist,x,y;
+
         node(int x,int y){
             this.x=x;
             this.y=y;
+        }
+
+        node (int x,int y, int d){
+            this.x=x;
+            this.y=y;
+            dist=d;
         }
     }
 }
