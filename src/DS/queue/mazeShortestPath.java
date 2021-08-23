@@ -7,8 +7,8 @@ import java.util.Queue;
 public class mazeShortestPath {
 
     static int N=10;
-    static int[] row={1,-1,0,0};
-    static int[] col={0,0,1,-1};
+    static int[] row={1,0,0,-1};
+    static int[] col={0,-1,1,0};
 
     static class Node{
         int x,y,dist;
@@ -37,6 +37,8 @@ public class mazeShortestPath {
 
         // Find the shortest path from source `(0, 0)` to destination `(7, 5)`
         int ans=shortPath(mat, 0, 0, 7, 5);
+
+        System.out.println("shortes path length : "+ans);
     }
 
     static int shortPath(int[][] maze,int i,int j,int x,int y){
@@ -44,7 +46,7 @@ public class mazeShortestPath {
         Queue<Node> q=new ArrayDeque<>();
         boolean[][] visited=new boolean[N][N];
 
-        q.add(new Node(i,j,0));
+        q.add(new Node(i,j,min_dist));
         visited[i][j]=true;
 
         while(!q.isEmpty()){
@@ -57,8 +59,8 @@ public class mazeShortestPath {
                 return min_dist;
 
             for(int k=0;k<4;k++){
-                if(isValid(maze,visited,i+row[k],j+col[k],x,y)) {
-                    visited[i+row[k]][j+row[k]]=true;
+                if(isValid(maze,visited,i+row[k],j+col[k])) {
+                    visited[i+row[k]][j+col[k]]=true;
                     q.add(new Node(i + row[k], j + col[k], min_dist + 1));
                 }
             }
@@ -67,9 +69,8 @@ public class mazeShortestPath {
         return -1;
     }
 
-    static boolean isValid(int[][] m,boolean [][] vi,int i,int j,int x,int y){
-        return (i>= 0) && (i < N) && (j >= 0) && (j < N)
-                && m[i][j] == 1 && !vi[i][j];
+    static boolean isValid(int[][] m,boolean [][] vi,int i,int j){
+        return (i>= 0) && (i < N) && (j >= 0) && (j < N) && m[i][j] == 1 && !vi[i][j];
     }
 
 }
