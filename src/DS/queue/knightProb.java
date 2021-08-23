@@ -31,12 +31,12 @@ public class knightProb {
             node dest=new node(7,0);
 
             sb.append("No. of Steps required to reach destination : ");
-            findSteps(sour,dest,N);
+            sb.append(findSteps(sour,dest,N)+"");
 
-            System.out.println();
+            System.out.println(sb.toString());
     }
 
-    void findSteps(node s,node d,int size){
+    static int findSteps(node s,node d,int size){
         HashSet<node> hs=new HashSet<>();
 
         Queue<node> q=new ArrayDeque<>();
@@ -50,8 +50,25 @@ public class knightProb {
             int y=newNode.y;
             int dis=newNode.dist;
 
-            
+            if(x==d.x && y==d.y){
+                return dis;
+            }
+
+            if(!hs.contains(newNode)){
+                hs.add(newNode);
+
+                for(int i=0;i<size;i++){
+                    int x1=x+row[i];
+                    int y1=y+col[i];
+
+                    if(isValid(x1,y1)){
+                        q.add(new node(x1,y1,dis+1));
+                    }
+                }
+            }
         }
+
+        return -1;
     }
 
 }
