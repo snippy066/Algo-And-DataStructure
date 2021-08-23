@@ -1,9 +1,12 @@
 //package DS.queue;
 //height of binary tree using queue
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class heightOfbin {
 
-    class Node{
+    static class Node{
         int data;
         Node left, right;
         Node(int d){
@@ -21,5 +24,25 @@ public class heightOfbin {
         root.right.right = new Node(25);
 
         System.out.print("The height of the binary tree is " + height(root));
+    }
+
+    static int height(Node root){
+
+        Queue<Node> q=new ArrayDeque<>();
+
+        q.add(root);
+
+        while(!q.isEmpty()){
+            Node node=q.poll();
+
+            int size=q.size();
+
+            while(size-->0){
+                if(node.left!=null)
+                    q.add(node.left);
+                if(node.right!=null)
+                    q.add(node.right);
+            }
+        }
     }
 }
