@@ -21,7 +21,15 @@ public class reversTraver {
 
     public static void main(String ar[]){
 
-        
+        /*
+         create a tree like
+                    15
+                 /      \
+                10       20
+              /    \    /    \
+             8     12  16   25
+       */
+
         Node root = new Node(15);
         root.left = new Node(10);
         root.right = new Node(20);
