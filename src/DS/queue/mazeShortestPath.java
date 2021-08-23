@@ -57,12 +57,19 @@ public class mazeShortestPath {
                 return min_dist;
 
             for(int k=0;k<4;k++){
-                if(isValid(maze,i+row[k],j+col[k],x,y))
-                    q.add(new Node(i+row[k],j+col[k],min_dist+1));
+                if(isValid(maze,visited,i+row[k],j+col[k],x,y)) {
+                    visited[i+row[k]][j+row[k]]=true;
+                    q.add(new Node(i + row[k], j + col[k], min_dist + 1));
+                }
             }
         }
 
         return -1;
+    }
+
+    static boolean isValid(int[][] m,boolean [][] vi,int i,int j,int x,int y){
+        return (i>= 0) && (i < N) && (j >= 0) && (j < N)
+                && m[i][j] == 1 && !vi[i][j];
     }
 
 }
