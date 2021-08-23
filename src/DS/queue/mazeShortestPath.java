@@ -40,6 +40,7 @@ public class mazeShortestPath {
     }
 
     static int shortPath(int[][] maze,int i,int j,int x,int y){
+        int min_dist=0;
         Queue<Node> q=new ArrayDeque<>();
         boolean[][] visited=new boolean[N][N];
 
@@ -47,7 +48,18 @@ public class mazeShortestPath {
         visited[i][j]=true;
 
         while(!q.isEmpty()){
-            
+            Node newnode=q.poll();
+            i=newnode.x;
+            j=newnode.y;
+            min_dist=newnode.dist;
+
+            if(x==i && y==j)
+                return min_dist;
+
+            for(int k=0;k<4;k++){
+                if(isValid(maze,i+row[k],j+col[k],x,y))
+                    q.add(new Node(i+row[k],j+col[k],min_dist+1));
+            }
         }
 
         return -1;
