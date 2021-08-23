@@ -2,6 +2,15 @@
 //height of binary tree using queue
 
 public class heightOfbin {
+
+    class Node{
+        int data;
+        Node left, right;
+        Node(int d){
+            data=d;
+            left=right=null;
+        }
+    }
     public static void main(String ar[]){
         Node root = new Node(15);
         root.left = new Node(10);
