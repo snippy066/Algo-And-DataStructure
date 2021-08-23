@@ -1,6 +1,9 @@
 //package DS.queue;
 //shortest path in maze using BFS
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class mazeShortestPath {
     public static void main(String ar[]){
         //input maze
@@ -19,6 +22,13 @@ public class mazeShortestPath {
                 };
 
         // Find the shortest path from source `(0, 0)` to destination `(7, 5)`
-        shortPath(mat, 0, 0, 7, 5);
+        int ans=shortPath(mat, 0, 0, 7, 5);
     }
+
+    static int shortPath(int[][] maze,int i,int j,int x,int y){
+        Queue<Integer> q=new ArrayDeque<>();
+        
+        return -1;
+    }
+
 }
