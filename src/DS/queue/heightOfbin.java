@@ -31,18 +31,20 @@ public class heightOfbin {
         Queue<Node> q=new ArrayDeque<>();
 
         q.add(root);
-
+        int h=0;
         while(!q.isEmpty()){
-            Node node=q.poll();
-
             int size=q.size();
 
             while(size-->0){
+                Node node=q.poll();
+
                 if(node.left!=null)
                     q.add(node.left);
                 if(node.right!=null)
                     q.add(node.right);
             }
+            h++;
         }
+        return h;
     }
 }
