@@ -4,6 +4,7 @@
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Stack;
 
 public class reversTraver {
     static StringBuilder sb=new StringBuilder();
@@ -33,6 +34,7 @@ public class reversTraver {
 
     static void revBin(Node root){
         Queue<Node> q=new ArrayDeque<>();
+        Stack<Node> st=new Stack<>();
 
         q.add(root);
 
@@ -44,7 +46,13 @@ public class reversTraver {
 
                 if(node.left!=null)
                     q.add(node.left);
+                if(node.right!=null)
+                    q.add(node.right);
+
+                st.push(node);
             }
         }
+
+        while (!st.isEmpty())   sb.append(st.pop()+" ");
     }
 }
