@@ -27,7 +27,6 @@ public class heightOfbin {
     }
 
     static int height(Node root){
-
         Queue<Node> q=new ArrayDeque<>();
 
         q.add(root);
