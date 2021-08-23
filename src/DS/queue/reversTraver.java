@@ -28,8 +28,9 @@ public class reversTraver {
                 10       20
               /    \    /    \
              8     12  16   25
-       */
 
+             8 12 16 25 10 20 15
+       */
         Node root = new Node(15);
         root.left = new Node(10);
         root.right = new Node(20);
@@ -48,20 +49,17 @@ public class reversTraver {
 
         q.add(root);
 
-        while(!q.isEmpty()){
-            int size=q.size();
-
-            while(size-->0){
+            while(q.size()>0){
                 Node node=q.poll();
 
-                if(node.left!=null)
-                    q.add(node.left);
                 if(node.right!=null)
                     q.add(node.right);
+                if(node.left!=null)
+                    q.add(node.left);
 
                 st.push(node.data);
             }
-        }
+
 
         while (!st.isEmpty())   sb.append(st.pop()+" ");
     }
