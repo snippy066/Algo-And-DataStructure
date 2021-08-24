@@ -5,6 +5,7 @@ import java.util.Deque;
 
 class diagonalView
 {
+    static StringBuilder sb=new StringBuilder();
    static  class Node
     {
         int data;
@@ -44,6 +45,7 @@ class diagonalView
         root.right.right.right=new Node(15);
 
         diagonalPrint(root);
+        System.out.println(sb.toString());
     }
 
     static void diagonalPrint(Node head){
@@ -57,7 +59,8 @@ class diagonalView
                dq.addLast(node.right);
            if(node.left!=null)
                dq.addFirst(node.left);
-           
+
+           sb.append(node.data+" ");
        }
 
     }
