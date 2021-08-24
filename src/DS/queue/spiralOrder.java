@@ -11,6 +11,9 @@
         order : (1,2,3,7,6,5,4) or (1,3,2,4,5,6,7)
  */
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class spiralOrder {
 
     static class Node{
@@ -31,7 +34,15 @@ public class spiralOrder {
         root.left.right = new Node(12);
         root.right.left = new Node(16);
         root.right.right = new Node(25);
+        root.left.left.left = new Node(20);
+        root.right.right.right = new Node(30);
 
         spiralOrderTraversal(root);
+    }
+
+    static void spiralOrderTraversal(Node root){
+        Queue<Node> q=new ArrayDeque<>();
+
+
     }
 }
