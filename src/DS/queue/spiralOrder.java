@@ -9,6 +9,8 @@
              4     5   6      7
 
         order : (1,2,3,7,6,5,4) or (1,3,2,4,5,6,7)
+
+        order followed : (1,2,3,7,6,5,4)
  */
 
 import java.util.ArrayDeque;
@@ -41,6 +43,7 @@ public class spiralOrder {
         root.right.right.right = new Node(9);
 
         spiralOrderTraversal(root);
+        System.out.println(sb.toString());
     }
 
     static void spiralOrderTraversal(Node root){
@@ -68,7 +71,7 @@ public class spiralOrder {
                 while(size-->0) {
                     Node node = q.pollLast();
                     sb.append(node.data + " ");
-                    
+
                     if (node.right != null)
                         q.addFirst(node.right);
                     if (node.left != null)
