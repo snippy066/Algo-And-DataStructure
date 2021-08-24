@@ -8,7 +8,7 @@
               /   \     /    \
              4     5   6      7
 
-        view : 
+        view :
  */
 public class btmView {
 }
