@@ -3,6 +3,7 @@
 
 
 public class leftView {
+    static StringBuilder sb=new StringBuilder();
 
     static class Node{
         int data;
@@ -24,10 +25,17 @@ public class leftView {
         root.right.left.left = new Node(7);
         root.right.left.right = new Node(8);
 
-        leftView(root);
+        leftView(root,1);
     }
 
-    static void leftView(Node head){
-        
+    static void leftView(Node head,int level){
+        int maxLevel=0;
+
+        if(maxLevel<level){
+            sb.append(head.data);
+            maxLevel=level;
+        }
+        leftView(head.left,level+1);
+        leftView(head.right,level+1);
     }
 }
