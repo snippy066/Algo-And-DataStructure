@@ -1,7 +1,6 @@
 import java.util.ArrayDeque;
-import java.util.Queue;
-
-// A class to store a binary tree node
+import java.util.Deque;
+//import java.util.Queue;
 
 
 class diagonalView
@@ -13,52 +12,6 @@ class diagonalView
 
         Node(int data) {
             this.data = data;
-        }
-    }
-    // Iterative function to print the diagonal elements of a given binary tree
-    public static void diagonalPrint(Node root)
-    {
-        // create an empty queue
-        Queue<Node> q = new ArrayDeque<>();
-
-        // create a sentinel (dummy) node to denote the end of a diagonal
-        Node sentinel = new Node(-1);
-
-        // enqueue all nodes of the first diagonal in the binary tree
-        while (root != null)
-        {
-            q.add(root);
-            root = root.right;
-        }
-
-        // enqueue sentinel node at the end of each diagonal
-        q.add(sentinel);
-
-        // run till the only sentinel is left
-        while (q.size() != 1)
-        {
-            // dequeue front node
-            Node front = q.poll();
-
-            if (front != sentinel)
-            {
-                // print the current node
-                System.out.print(front.data + " ");
-
-                // enqueue nodes of the next diagonal in the binary tree
-                Node node = front.left;
-                while (node != null)
-                {
-                    q.add(node);
-                    node = node.right;
-                }
-            }
-            else {
-                // If the current diagonal end is reached, enqueue the sentinel node
-                // and print an empty line
-                q.add(sentinel);
-                System.out.println();
-            }
         }
     }
 
@@ -91,5 +44,21 @@ class diagonalView
         root.right.right.right=new Node(15);
 
         diagonalPrint(root);
+    }
+
+    static void diagonalPrint(Node head){
+       Deque<Node> dq=new ArrayDeque<>();
+       dq.add(head);
+
+       while(!dq.isEmpty()){
+           Node node=dq.pollLast();
+
+           if(node.right!=null)
+               dq.addLast(node.right);
+           if(node.left!=null)
+               dq.addFirst(node.left);
+           
+       }
+
     }
 }
