@@ -5,6 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class leftViewIter {
+    static StringBuilder sb=new StringBuilder();
     static class Node{
         int data;
         Node left,right;
@@ -24,6 +25,7 @@ public class leftViewIter {
         root.right.left.right = new Node(8);
 
         leftView(root);
+        System.out.println(sb.toString());
     }
     static void leftView(Node head){
         Queue<Node> q=new ArrayDeque<>();
