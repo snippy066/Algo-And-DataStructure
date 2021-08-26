@@ -3,6 +3,6 @@
 
 public class cycleGraph {
     public static void main(String ar[]){
-        
+
     }
 }
