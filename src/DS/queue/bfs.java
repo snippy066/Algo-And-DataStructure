@@ -1,11 +1,10 @@
 //package DS.queue;
 //breadth first search using iterative method with help of queue
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class bfs {
+    public static StringBuilder sb=new StringBuilder();
 
     public static void main(String ar[]){
         List<Edge> edges = Arrays.asList(
@@ -17,8 +16,25 @@ public class bfs {
 
         int n=15;   //number of nodes
 
+        boolean[] dis=new boolean[n];
         Graph g=new Graph(edges,n);
 
+        for(int i=0;i<n;i++){
+            if(!dis[i]){
+                brdthfir(g,dis,i);   //graph , visited node , node number
+            }
+        }
+
+    }
+
+    static void brdthfir(Graph g, boolean[] di,int i){
+        Queue<Integer> q=new ArrayDeque<>();
+
+        di[i]=true;
+
+        q.add(i);
+
+        
 
     }
 }
