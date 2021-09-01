@@ -1,6 +1,7 @@
 //package DS.queue;
 //breadth first search using iterative method with help of queue
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,15 +24,29 @@ public class bfs {
 }
 class Edge{
     int src,dest;
-    Edge(int s,int d){
+    public Edge(int s,int d){
         src=s;
         dest=d;
     }
 }
 
 class Graph{
-    Graph(List<Edge> ed, int N){
+    List<List<Integer>>  adj=null;
+    Graph(List<Edge> edges, int N){
 
+        adj=new ArrayList<>();
+
+        for(int i=0;i<N;i++){
+            adj.add(new ArrayList<Integer>());
+        }
+
+        for(Edge ed:edges){
+            int sr=ed.src;
+            int de=ed.dest;
+
+            adj.get(sr).add(de);
+            adj.get(de).add(sr);
+        }
     }
 
 }
