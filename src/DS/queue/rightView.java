@@ -1,6 +1,9 @@
 //package DS.queue;
 //right view of a binary tree
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 /*
             1
           /   \
@@ -15,6 +18,7 @@
 
  */
 public class rightView {
+    static StringBuilder sb=new StringBuilder();
     static class Node{
         int data;
         Node right,left;
@@ -32,6 +36,19 @@ public class rightView {
        root.right.left=new Node(5);
        root.right.right=new Node(6);
        root.right.right.left=new Node(7);
+
+       view(root);
+       System.out.println(sb.toString());
+    }
+
+    static void view (Node head){
+        Queue<Node> q=new ArrayDeque<>();
+
+        q.add(head);
+
+        while(!q.isEmpty()){
+
+        }
     }
 }
 
