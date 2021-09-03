@@ -53,7 +53,7 @@ public class rightView {
 
        view(head.right,level+1);
        view(head.left,level+1);
-       
+
     }
 }
 
