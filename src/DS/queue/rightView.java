@@ -14,10 +14,11 @@ import java.util.Queue;
                  7
 
 
-       right view =( 1,2,4,7);
+       right view =( 1,3,6,7);
 
  */
 public class rightView {
+    static int maxlevel=0;
     static StringBuilder sb=new StringBuilder();
     static class Node{
         int data;
@@ -37,18 +38,22 @@ public class rightView {
        root.right.right=new Node(6);
        root.right.right.left=new Node(7);
 
-       view(root);
+       view(root,1);
        System.out.println(sb.toString());
     }
 
-    static void view (Node head){
-        Queue<Node> q=new ArrayDeque<>();
+    static void view (Node head,int level){
+        if(head==null)
+            return;
 
-        q.add(head);
+       if(maxlevel<level){
+           sb.append(head.data+" ");
+           maxlevel=level;
+       }
 
-        while(!q.isEmpty()){
-
-        }
+       view(head.right,level+1);
+       view(head.left,level+1);
+       
     }
 }
 
