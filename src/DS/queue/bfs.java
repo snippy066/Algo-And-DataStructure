@@ -25,6 +25,8 @@ public class bfs {
             }
         }
 
+        System.out.println(sb.toString());
+
     }
 
     static void brdthfir(Graph g, boolean[] di,int i){
@@ -34,7 +36,18 @@ public class bfs {
 
         q.add(i);
 
+        while(!q.isEmpty()){
+            i=q.poll();
 
+            sb.append(i+" ");
+
+            for(int u: g.adj.get(i)){
+                if(!di[u]){
+                    di[u]=true;
+                    q.add(u);
+                }
+            }
+        }
 
     }
 }
