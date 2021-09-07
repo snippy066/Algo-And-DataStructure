@@ -1,7 +1,33 @@
 //package DS.BinaryTree;
 //top view of binary tree
 
+import java.util.Map;
+
 public class topView {
+    static class Node{
+        int data;
+        Node left,right;
+        Node(int d){
+            data=d;
+            left=right=null;
+        }
+    }
+
+    static class Pair<U,V>{
+        U firs;
+        V second;
+
+        Pair(U firs,V second){
+            this.firs=firs;
+            this.second=second;
+        }
+
+        Pair<U,V> of(U x,V y){
+            return new Pair<>(x,y);
+        }
+        
+    }
+
     public static void main(String ar[]){
         Node root=new Node(1);
         root.left = new Node(2);
@@ -14,4 +40,10 @@ public class topView {
 
         printTop(root);
     }
+
+    static void printTop(Node root){
+        Map<Integer,Pair<Integer,Integer>> m=new Map<Integer, Pair<Integer, Integer>>();
+
+    }
+
 }
