@@ -19,6 +19,7 @@
       inorder : 0 6 20 0 14 0
  */
 public class sumTree {
+    static StringBuilder sb=new StringBuilder();
     static class Node{
         int data;
         Node left, right;
@@ -39,9 +40,28 @@ public class sumTree {
 
         convertToSumTree(root);
         inorder(root);
+        System.out.println(sb.toString());
     }
 
     static int convertToSumTree(Node root){
-        
+        if(root==null)
+            return 0;
+
+        int left=convertToSumTree(root.left);
+        int right=convertToSumTree(root.right);
+
+        root.data+=left+right;
+
+        return root.data;
+    }
+
+    static void inorder(Node root){
+        if(root==null)
+            return;
+
+        inorder(root.left);
+        sb.append(root.data+" ");
+        inorder(root.right);
+
     }
 }
