@@ -36,7 +36,8 @@ public class LCA {
         sb.append(temp.data+" ");
         temp=findLCA(root,3,6);
         sb.append(temp.data+" ");
-        
+
+        System.out.println(sb.toString());
     }
 
     static Node findLCA(Node root,int x,int y){
