@@ -15,8 +15,8 @@
               distance of 7,8 : 4 ( 7->5->3(LCA)->6->8)
         */
 
-import DS.BinaryTree.Node;
-public class distanceNode {
+
+public class distanceNode  {
     static class Node{
         int data;
         Node left,right;
@@ -40,6 +40,35 @@ public class distanceNode {
     }
 
     static int findDistance(Node root,int x,int y){
+        if(root==null)
+            return -1;
+        Node lca;
+        if(isNodePrsnt(root,x)||isNodePrsnt(root,y)){
+            lca=findLca(root,x,y);
+        }
         return -1;
+    }
+
+    static boolean isNodePrsnt(Node head,int val){
+        if(head==null)
+            return false;
+        if(head.data==val)
+            return true;
+
+        return isNodePrsnt(head.left,val)||isNodePrsnt(head.right,val);
+    }
+
+    static Node findLca(Node root,int x,int y){
+        if(root==null)
+            return null;
+
+        if(root.data==x || root.data==y)    return root;
+
+        Node left=findLca(root.left,x,y);
+        Node right=findLca(root.right,x,y);
+
+        if(left!=null)  return left;
+        else return right;
+
     }
 }
