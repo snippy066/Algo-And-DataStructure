@@ -46,7 +46,23 @@ public class distanceNode  {
         if(isNodePrsnt(root,x)||isNodePrsnt(root,y)){
             lca=findLca(root,x,y);
         }
-        return -1;
+        else return -2; //if lca not found
+
+        return level(lca,x,0)+level(lca,y,0);
+
+    }
+
+    static int level(Node root,int val,int level){
+        if(root==null)
+            return -1;
+        if(root.data==val)
+            return level;
+
+        int left=level(root.left,val,level+1);
+
+        if(left!=-1) return left;
+
+        return level(root.right,val,level+1);
     }
 
     static boolean isNodePrsnt(Node head,int val){
@@ -66,6 +82,8 @@ public class distanceNode  {
 
         Node left=findLca(root.left,x,y);
         Node right=findLca(root.right,x,y);
+
+        if(left!=null && right!=null) return root;
 
         if(left!=null)  return left;
         else return right;
