@@ -17,8 +17,13 @@
                9      10
        */
 
+import DS.Node;
+
+import java.util.*;
+
 public class verticleNodes {
     public static void main(String ar[]){
+
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
@@ -28,14 +33,34 @@ public class verticleNodes {
         root.right.left.right = new Node(8);
         root.right.left.right.left = new Node(9);
         root.right.left.right.right = new Node(10);
+
+        printVertical(root);
     }
+
+    static void printVertical(Node root){
+        if(root==null)
+            return;
+
+        HashMap<Integer, List<Integer>> hs=new HashMap<>();
+
+        printVertical(root,hs,0);
+
+        for(Collection<Integer> c:hs.values()){
+            System.out.println(c);
+        }
+    }
+
+    static void printVertical(Node root,HashMap<Integer,List<Integer>> m,int dist){
+        if(root==null)
+            return;
+
+        if(!m.containsKey(dist))    m.put(dist,new ArrayList<Integer>());
+
+        m.get(dist).add(root.data);
+
+        printVertical(root.left,m,dist-1);
+        printVertical(root.right,m,dist+1);
+    }
+
 }
 
-class Node{
-    int data;
-    Node left,right;
-    Node(int data){
-        this.data=data;
-        left=right=null;
-    }
-}
