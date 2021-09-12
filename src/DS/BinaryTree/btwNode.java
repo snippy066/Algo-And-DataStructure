@@ -8,6 +8,16 @@ import java.util.HashMap;
 import java.util.List;
 
 public class btwNode {
+    /*
+                15
+               /   \
+              10    20
+             /  \   /  \
+             8  12  16 25
+                         \
+                          30
+
+     */
     public static void main(String ar[]){
         Node root = new Node(15);
         root.left = new Node(10);
@@ -25,7 +35,6 @@ public class btwNode {
 
     void printNodes(Node root,int s,int e){
         HashMap<Integer, List<Integer>> hs=new HashMap<>();
-
         printNodes(root,1,hs);
 
         for(int i=s;i<=e;i++){
