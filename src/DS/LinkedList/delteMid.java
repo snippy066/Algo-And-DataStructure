@@ -31,18 +31,19 @@ public class delteMid{
                 t--;
             }
         }
-    }
-    class Node{
-    int data;
-    Node next;
+    static class Node{
+        int data;
+        Node next;
 
-    Node(int x){
-        data = x;
-        next = null;
+        Node(int x){
+            data = x;
+            next = null;
+        }
     }
+
 
 }
-    class Solution {
+    class Solution extends delteMid {
         Node deleteMid(Node head) {
             Node slow_p=head,fast_p=head;
             Node temp=head;
