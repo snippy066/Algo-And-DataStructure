@@ -11,18 +11,18 @@ public class LCS {
 
         Map<String, Integer> lookup = new HashMap<>();
 
-        System.out.print("The length of the LCS is "
+        System.out.print("The length of the LCS is : "
                 + LCSLength(X, Y, X.length(), Y.length(), lookup));
     }
     static int LCSLength(String x,String y,int m, int n,Map<String,Integer> l){
         if(m==0||n==0)
             return 0;
 
-        String key=m+"_"+n;
+        String key=m+"|"+n;
 
         if(!l.containsKey(key)){
             if(x.charAt(m-1)==y.charAt(n-1))
-                l.put(key,LCSLength(x,y,m-1,n-1,l));
+                l.put(key,LCSLength(x,y,m-1,n-1,l)+1);
 
             else{
                 l.put(key,Math.max(LCSLength(x,y,m-1,n,l),LCSLength(x,y,m,n-1,l)));
