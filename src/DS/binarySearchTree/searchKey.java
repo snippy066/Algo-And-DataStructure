@@ -18,6 +18,27 @@ public class searchKey {
         for (int key: keys) {
             root = insert(root, key);
         }
-        
+        search(root,25,null);
+    }
+    static void search(Node root,int d,Node parent){
+        if(root==null){
+            System.out.println("value not found in the tree");
+            return;
+        }
+        if(root.data==d){
+            if(parent==null){
+                System.out.println("value found at root" +d);
+            }
+            if(parent.data>d){
+                System.out.println("value found at left tree of "+parent.data);
+            }
+            else{
+                System.out.println("value found at right tree of "+parent.data);
+            }
+            return;
+        }
+        else if(root.data>d) search(root.left,d,root);
+        else
+            search(root.right,d,root);
     }
 }
