@@ -49,4 +49,28 @@ public class inorderPre {
         return root;
 
     }
+    static Node findPredecessor(Node root, Node prec,int key){
+        if(root==null)
+            return prec;
+
+        if(root.data==key){
+            if(root.left!=null)
+                return findMax(root.left);
+        }
+        else if(key<root.data){
+            return findPredecessor(root.left,prec,key);
+        }
+        else{
+            prec=root;
+            return findPredecessor(root.right,prec,key);
+        }
+        return  prec;
+    }
+
+    static Node findMax(Node head){
+        while(head.right!=null)
+            head=head.right;
+
+        return head;
+    }
 }
