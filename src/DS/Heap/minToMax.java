@@ -1,5 +1,7 @@
-package DS.Heap;
+//package DS.Heap;
+//convert max to min heap
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class minToMax {
@@ -21,13 +23,13 @@ public class minToMax {
         minToMax mm=new minToMax();
         mm.maxHeap(arr);
 
-        System.out.println(arr.toString());
+        System.out.println(Arrays.toString(arr));
     }
 
     void maxHeap(int[] arr){
         int i=(arr.length-2)/2;
-        while(i-->=0)
-            heapify(arr,arr.length,i)
+        while(i>=0)
+            heapify(arr,arr.length,i--);
     }
 
     void heapify(int[] arr,int size,int i){
